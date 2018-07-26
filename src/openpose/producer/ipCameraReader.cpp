@@ -68,7 +68,11 @@ namespace op
     {
         try
         {
-            return VideoCaptureReader::getRawFrame();
+             cv::Mat frame;
+             for (int i = 0; i < 3; i++) {
+                frame = VideoCaptureReader::getRawFrame();
+             }
+             return frame;
         }
         catch (const std::exception& e)
         {
